@@ -2,6 +2,7 @@ out/
 test*
 .vscode/
 *.png
+*.docx
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
