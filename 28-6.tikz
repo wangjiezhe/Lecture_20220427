@@ -1,0 +1,19 @@
+\begin{tikzpicture}[>=latex, semithick, scale=.8]
+  \draw[->, thick] (-2,0) -- (3.5,0) node[below] {$x$};
+  \draw[->, thick] (0,-2) -- (0,3.5) node[left] {$y$};
+  \path (0,0) node[below left=-2pt] {$O$};
+  \foreach \i in {-1,1,2,3} {
+    \draw (\i,0) node[below=-1.5pt] {$\i$} -- (\i, 0.1);
+    \draw (0,\i) node[left=-2pt] {$\i$} -- (0.1,\i);
+  }
+  \draw[fill] (1,0) node[above left=-2pt] {$M$} circle (1.3pt);
+  \draw (1,0) circle (1cm);
+  \draw[red, smooth, domain=-0.5:1.2] plot (\x, -\x*2+1) node[right] {$l$};
+  \draw[red, fill] (0,1) node[above right=-2pt] {$P$} circle (1.2pt);
+  \draw[red, fill] (2,0) node[above right=-2pt] {$B$} circle (1.2pt);
+  \draw[red, fill] (1,0) -- (1,-1) node[below left=-2pt] {$B'$} circle (1.2pt);
+  \pgfmathparse{90+atan(0.5)}
+  \let\aPB=\pgfmathresult
+  \draw[red] (1,-1+0.4) arc (90:\aPB:0.4);
+  \draw[red] (1,-1+0.35) arc (90:\aPB:0.35);
+\end{tikzpicture}

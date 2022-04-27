@@ -1,0 +1,18 @@
+\begin{tikzpicture}[>=latex, semithick, scale=.8]
+  \draw[->, thick] (-2,0) -- (3.5,0) node[below] {$x$};
+  \draw[->, thick] (0,-2) -- (0,3.5) node[left] {$y$};
+  \path (0,0) node[below left=-2pt] {$O$};
+  \path (0,0) node[below left=-2pt] {$O$};
+  \foreach \i in {-1,1,2,3} {
+    \draw (\i,0) node[below=-1.5pt] {$\i$} -- (\i, 0.1);
+    \draw (0,\i) node[left=-2pt] {$\i$} -- (0.1,\i);
+  }
+  \draw[fill] (1,0) node[above left=-2pt] {$M$} circle (1.3pt);
+  \draw (1,0) circle (2cm);
+
+  \draw[red, fill] (1,0) -- (0,{sqrt(2)}) node[right=2pt] {$P$} circle (1.2pt);
+  \draw[red, smooth, domain=-1.8:1.8] plot (\x, {\x/sqrt(2)+sqrt(2)}) node[right] {$l$};
+  \pgfmathparse{atan(1/sqrt(2)}
+  \let\k=\pgfmathresult
+  \draw[red] (0,{sqrt(2)}) -- ++ (\k:.15) -- ++ ({\k-90}:.15) -- ++({\k+180}:.15) -- cycle;
+\end{tikzpicture}

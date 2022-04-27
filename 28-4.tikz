@@ -1,0 +1,18 @@
+\begin{tikzpicture}[semithick, scale=1.2]
+  \tkzDefPoint(0,0){M}
+  \pgfmathsetmacro\r{\fpeval{1/sqrt(5)}}
+  \tkzDefPointOnCircle[R=angle 70 center M radius \r] \tkzGetPoint{N}
+  \tkzDefTangent[at=N](M)
+  \tkzInterLC[R](N,tkzPointResult)(M,1) \tkzGetPoints{B}{A}
+
+  \tkzDrawPoint[size=2](M)
+  \tkzDrawCircle[R](M,1)
+  \tkzDrawSegments(A,B M,A M,B M,N)
+
+  \tkzLabelPoints[below=-1.5pt](M)
+  \tkzLabelPoints[above left=-2pt](A)
+  \tkzLabelPoints[right=-1.5pt](B)
+  \tkzLabelPoints[above right=-2pt](N)
+
+  \tkzMarkRightAngle[size=.1](M,N,B)
+\end{tikzpicture}

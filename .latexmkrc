@@ -20,7 +20,7 @@
 # 3: tex -> dvi -> pdf (dvipdf)
 # 4: tex -> pdf (lualatex)
 # 5: tex -> pdf -> xdv (xelatex, xdvipdfmx)
-$pdf_mode = 4;
+$pdf_mode = 5;
 
 # 使用 bibtex 如果存在 .bib 文件
 # $bibtex_use = 1.5;

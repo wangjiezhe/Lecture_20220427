@@ -1,0 +1,27 @@
+\begin{tikzpicture}[semithick]
+  \tkzDefPoints{0/0/B, 3/0/C}
+  \tkzDefMidPoint(B,C) \tkzGetPoint{D}
+  \tkzDefShiftPoint[D](128:2.8){A}
+  
+  \tkzDrawPolygon[](A,B,C)
+  \tkzDrawSegment[line join=bevel](A,D)
+  
+  \tkzLabelPoints[above=-1.5pt](A)
+  \tkzLabelPoints[below left=-3pt](B)
+  \tkzLabelPoints[below right=-3pt](C)
+  \tkzLabelPoints[below left=-1.5pt](D)
+  
+  \tkzDefPointBy[reflection=over A--D](B) \tkzGetPoint{B'}
+  \tkzDefLine[parallel=through C](A,B)
+  \tkzInterLL(A,B')(C,tkzPointResult) \tkzGetPoint{E}
+  
+  \tkzDrawSegments[](A,E C,E)
+  
+  \tkzLabelPoints[above=-1.5pt](B')
+  \tkzLabelPoints[above right=-2pt](E)
+  
+  \tkzDrawPolySeg[red, densely dashed](D,B',C)
+%   \tkzMarkSegments[mark=s||, color=green!70!black, size=2pt](B,D D,C B',D)
+%   \tkzMarkAngles[size=.35, color=blue, mark=|, mksize=1pt, mkcolor=blue](A,B',D C,B,A)
+%   \tkzMarkAngles[size=.2, color=cyan, mark=o, mksize=1.5pt, mkcolor=cyan](E,C,D D,B',E)
+\end{tikzpicture}

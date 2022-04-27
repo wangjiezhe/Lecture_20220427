@@ -1,0 +1,14 @@
+\begin{tikzpicture}[semithick]
+  \tkzDefPoints{0/0/B, 3/0/C}
+  \tkzDefMidPoint(B,C) \tkzGetPoint{D}
+  \tkzDefShiftPoint[D](48:2.8){A}
+  
+  \tkzDrawPolygon[](A,B,C)
+  \tkzDrawSegment[line join=bevel](A,D)
+  
+  \tkzLabelPoints[above=-1.5pt](A)
+  \tkzLabelPoints[below left=-3pt](B)
+  \tkzLabelPoints[below right=-3pt](C)
+  \tkzLabelPoints[below=-1.5pt](D)
+  
+\end{tikzpicture}
